@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Risk Prediction</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #ffffff);
+        }
+
+        .navbar {
+            background-color: #0d6efd;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0d6efd;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #084298;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #0d6efd;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        🏥 AI Health Risk Prediction System
+    </div>
+
+    <div class="container">
+        <h2>Patient Health Check</h2>
+
+        <form action="/predict" method="post">
+            <label>Glucose Level</label>
+            <input type="text" name="glucose" placeholder="Enter glucose level">
+
+            <label>BMI</label>
+            <input type="text" name="bmi" placeholder="Enter BMI">
+
+            <label>Age</label>
+            <input type="text" name="age" placeholder="Enter age">
+
+            <input type="submit" value="Check Health Risk">
+        </form>
+
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 AI Health System | Designed by Reshma
+    </div>
+
+</body>
+</html>
